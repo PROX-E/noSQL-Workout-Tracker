@@ -11,4 +11,13 @@ module.exports = function (app) {
                 res.json(err)
             })
     });
+
+    app.post("/api/workouts", function (req, res) {
+        Workout.create({})
+            .then(data => res.json(data))
+            .catch(err => {
+                console.log("err", err)
+                res.json(err)
+            })
+    });
 };
